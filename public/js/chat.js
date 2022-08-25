@@ -18,14 +18,14 @@ const sidebarTemplates = document.querySelector("#sidebar-template").innerHTML;
 const { username, room } = Qs.parse(location.search, {
   ignoreQueryPrefix: true,
 });
-console.log(username, room);
+// console.log(username, room);
 
 const autoscroll = () => {
   $messages.scrollTop = $messages.scrollHeight;
 };
 
 socket.on("locationMessage", (msg) => {
-  console.log(msg);
+  // console.log(msg);
   const html = Mustache.render(locationTemplates, {
     username: msg.username,
     url: msg.url,
@@ -37,7 +37,7 @@ socket.on("locationMessage", (msg) => {
 });
 
 socket.on("message", (message) => {
-  console.log(message);
+  // console.log(message);
   const html = Mustache.render(messageTemplates, {
     username: message.username,
     message: message.text,

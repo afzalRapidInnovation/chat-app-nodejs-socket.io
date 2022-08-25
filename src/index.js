@@ -24,7 +24,7 @@ const publicStatic = path.join(__dirname, "../public");
 app.use(express.static(publicStatic));
 
 io.on("connection", (socket) => {
-  console.log("New webSocket connection");
+  // console.log("New webSocket connection");
 
   socket.on("join", (options, callback) => {
     const { error, user } = addUser({ id: socket.id, ...options });
